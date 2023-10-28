@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Centered Form</title>
+  <link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
+  <style>
+    body {
+      font-family: Lexend;
+      height: 100vh;
+      box-align: center;
+    }
+
+    .containercigas {
+      display: flex;
+      padding-left: 5%;
+      padding-top: 2%;
+      background-color: #F3F1EC ;
+    }
+
+    .containeritmis {
+      display: flex;
+      padding-left: 5%;
+      padding-top: 2%;
+      background-color: #F3F1EC ;
+    }
+
+    .container {
+      display: flex;
+      padding-left: 5%;
+      padding-top: 2%;
+    }
+
+
+    .input-container {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      border: 2px solid  #FBBA30 ;
+      border-radius: 3px;
+      width: 100px;
+    }
+
+    textarea[type="text"] {
+      padding: 5px;
+      border: 2px solid #0893D0 ;
+      border-radius: 3px;
+    }
+
+     .textareafinal[type="text"] {
+      padding: 5px;
+      border: 2px solid #06B92F  ;
+      border-radius: 3px;
+    }
+
+    button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+    .buttoncpy {
+            padding: 5px 10px;
+            background-color: #06B92F;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+  </style>
+</head>
+<body>
+  <div class="containercigas">
+  <label>CIGAS Code</label>
+  </div>
+
+  <div class="containercigas">
+    <div class="input-container">
+      <label>Head</label>
+      <input type="text" id="input1" maxlength="3" placeholder="In 3 digit">
+    </div>
+  
+  &nbsp;<p style="font-size:20px">-</p>&nbsp;
+  
+    <div class="input-container">
+      <label>Programme</label>
+      <input type="text" id="input2" maxlength="1" placeholder="In 1 digit">
+    </div>
+  &nbsp;<p style="font-size:20px">-</p>&nbsp;
+  
+    <div class="input-container">
+      <label>Project</label>
+      <input type="text" id="input3" maxlength="2" placeholder="In 2 digit">
+    </div>
+  
+  &nbsp;<p style="font-size:20px">-</p>&nbsp;
+  
+    <div class="input-container">
+      <label>Sub Project</label>
+      <input type="text" id="input4" maxlength="3" placeholder="In 3 digit">
+    </div>
+  
+  &nbsp;<p style="font-size:20px">-</p>&nbsp;
+  
+    <div class="input-container">
+      <label>Vote</label>
+      <input type="text" id="input5" maxlength="4" placeholder="In 4 digit">
+    </div>
+  
+  &nbsp;<p style="font-size:20px">-</p>&nbsp;
+  
+    <div class="input-container">
+      <label>Detail</label>
+      <input type="text" id="input6" maxlength="2" placeholder="In 2 digit">
+    </div>
+  
+  &nbsp;<p style="font-size:20px">/</p>&nbsp;
+  
+    <div class="input-container">
+      <label>Fund</label>
+      <input type="text" id="input7" maxlength="2" placeholder="In 2 digit">
+    </div>
+  </div>
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+  <div class="containeritmis">
+  <label>ITMIS Code</label>
+  </div>
+
+  <div class="containeritmis">
+    <div class="input-container">
+      <label>Fund</label>
+      <textarea type="text" id="result1" rows="1" cols="6" readonly></textarea>
+    </div>
+
+    &nbsp;<p style="font-size:20px">/</p>&nbsp;
+
+    <div class="input-container">
+      <label>Financing Source</label>
+      <textarea type="text" id="result2" rows="1" cols="16" readonly></textarea>
+    </div>
+
+    &nbsp;<p style="font-size:20px">/</p>&nbsp;
+
+    <div class="input-container">
+      <label>Division</label>
+      <textarea type="text" id="result3" rows="1" cols="10" readonly></textarea>
+    </div>
+
+    &nbsp;<p style="font-size:20px">/</p>&nbsp;
+
+    <div class="input-container">
+      <label>Sub Project</label>
+      <textarea type="text" id="result4" rows="1" cols="10" readonly></textarea>
+    </div>
+
+    &nbsp;<p style="font-size:20px">/</p>&nbsp;
+
+    <div class="input-container">
+      <label>Detail</label>
+      <textarea type="text" id="result5" rows="1" cols="10" readonly></textarea>
+    </div>
+  </div>
+   <!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+  <div class="container">
+            <button onclick="concatenateValues()">Convert</button>
+ </div>
+ 
+ <!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<div class="container">
+<textarea class="textareafinal" type="text" id="final" rows="2" cols="40" readonly></textarea> 
+</div>
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+<div class="container">
+<button class="buttoncpy"  id="copyButton">Copy Coding Block</button>
+</div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+     <script>
+        function concatenateValues() {
+            var input1 = document.getElementById("input1");
+            var input2 = document.getElementById("input2");
+            var input3 = document.getElementById("input3");
+            var input4 = document.getElementById("input4");
+            var input5 = document.getElementById("input5");
+            var input6 = document.getElementById("input6");
+            var input7 = document.getElementById("input7");
+            var minLength1 = 3;
+            var minLength2 = 1;
+            var minLength3 = 2;
+            var minLength4 = 3;
+            var minLength5 = 4;
+            var minLength6 = 2;
+            var minLength7 = 2;
+
+            if (input1.value.length < minLength1) {
+                    swal("Head must be " + minLength1 + " digit long");
+                }
+            if (input2.value.length < minLength2) {
+                    swal("Programme must be " + minLength2 + " digit long");
+                }
+            if (input3.value.length < minLength3) {
+                    swal("Project must be " + minLength3 + " digit long");
+                }
+            if (input4.value.length < minLength4) {
+                    swal("Sub Project must be " + minLength4 + " digit long");
+                }        
+            if (input5.value.length < minLength5) {
+                    swal("Vote must be " + minLength5 + " digit long");
+                }
+            if (input6.value.length < minLength6) {
+                    swal("Detail must be " + minLength6 + " digit long");
+                }
+            if (input7.value.length < minLength7) {
+                    swal("Fund must be " + minLength7 + " digit long");
+                }
+
+            else {
+                
+            var value1 = document.getElementById("input1").value;
+            var value2 = document.getElementById("input2").value;
+            var value3 = document.getElementById("input3").value;
+            var value4 = document.getElementById("input4").value;
+            var value5 = document.getElementById("input5").value;
+            var value6 = document.getElementById("input6").value;
+            var value7 = document.getElementById("input7").value;
+
+            var results1 = "01";
+            document.getElementById("result1").textContent = results1;
+
+            var results2 = value7;
+            document.getElementById("result2").textContent = results2;
+
+            var results3 = value1 + "0000";
+            document.getElementById("result3").textContent = results3;
+
+            var results4 = value2 + value1 + value3 + value4 ;
+            document.getElementById("result4").textContent = results4;
+
+            var results5 = "2" + value5 + "0" + value6;
+            document.getElementById("result5").textContent = results5;
+
+            var allsgmt = results1 + "/" + results2 + "/" + results3 + "/" + results4 + "/" + results5;
+            document.getElementById("final").textContent = allsgmt;
+            }
+        }
+    </script>
+
+    <script>
+        document.getElementById("copyButton").addEventListener("click", function() {
+            var textArea = document.getElementById("final");
+
+            // Select the text in the textarea
+            textArea.select();
+            textArea.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the selected text to the clipboard
+            document.execCommand("copy");
+
+            // Deselect the text
+            textArea.setSelectionRange(0, 0);
+        });
+    </script>
+
+</body>
+</html>
