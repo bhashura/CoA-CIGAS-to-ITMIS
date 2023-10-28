@@ -12,20 +12,28 @@
       display: flex;
       padding-left: 5%;
       padding-top: 2%;
-      background-color: #F3F1EC ;
+      background-color: #ffffff;
+    }
+
+    .containercigassub {
+      display: flex;
+      padding-left: 5%;
+      padding-top: 0.1%;
+      background-color: #ffffff ;
     }
 
     .containeritmis {
       display: flex;
       padding-left: 5%;
       padding-top: 2%;
-      background-color: #F3F1EC ;
+      background-color: #ffffff ;
     }
 
     .container {
       display: flex;
       padding-left: 5%;
       padding-top: 2%;
+      background-color: #ffffff;
     }
 
 
@@ -36,6 +44,14 @@
     label {
       display: block;
       text-align: center;
+    }
+
+    .labelexp {
+      font-weight: bold;
+      display: block;
+      text-align: center;
+      font-size: 25px;
+      color: #1863d0;
     }
 
      .labeltopic {
@@ -84,6 +100,11 @@
   </style>
 </head>
 <body>
+
+  <div class="containercigas">
+  <label class="labelexp">Expenditure</label>
+  </div>
+
   <div class="containercigas">
   <label class="labeltopic">CIGAS Code</label>
   </div>
@@ -135,6 +156,14 @@
       <input type="text" id="input7" maxlength="2" placeholder="In 2 digit">
     </div>
   </div>
+  <div class="containercigassub">
+    <div class="input-container">
+        <label>Mid/Sub Office</label>
+        <input type="text" id="input8"  value="0000" maxlength="4">
+      </div>
+  </div>
+
+
   <!--/////////////////////////////////////////////////////////////////////////////////////////////-->
   <div class="containeritmis">
   <label class="labeltopic">ITMIS Code</label>
@@ -189,6 +218,11 @@
 <button class="buttoncpy"  id="copyButton">Copy Coding Block</button>
 </div>
 
+<br>
+<div class="containercigas">
+  <label class="labelexp">Revenue</label>
+  </div>
+
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
      <script>
@@ -200,6 +234,7 @@
             var input5 = document.getElementById("input5");
             var input6 = document.getElementById("input6");
             var input7 = document.getElementById("input7");
+            var input8 = document.getElementById("input8");
             var minLength1 = 3;
             var minLength2 = 1;
             var minLength3 = 2;
@@ -207,6 +242,7 @@
             var minLength5 = 4;
             var minLength6 = 2;
             var minLength7 = 2;
+            var minLength8 = 4;
 
             if (input1.value.length < minLength1) {
                     swal("Head must be " + minLength1 + " digit long");
@@ -230,6 +266,10 @@
                     swal("Fund must be " + minLength7 + " digit long");
                 }
 
+             if (input8.value.length < minLength8) {
+                    swal("Mid/Sub Office must be " + minLength8 + " digit long");
+                }    
+
             else {
                 
             var value1 = document.getElementById("input1").value;
@@ -239,6 +279,7 @@
             var value5 = document.getElementById("input5").value;
             var value6 = document.getElementById("input6").value;
             var value7 = document.getElementById("input7").value;
+            var value8 = document.getElementById("input8").value;
 
             var results1 = "01";
             document.getElementById("result1").textContent = results1;
@@ -246,7 +287,7 @@
             var results2 = value7;
             document.getElementById("result2").textContent = results2;
 
-            var results3 = value1 + "0000";
+            var results3 = value1 + value8;
             document.getElementById("result3").textContent = results3;
 
             var results4 = value2 + value1 + value3 + value4 ;
