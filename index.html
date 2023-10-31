@@ -238,31 +238,31 @@
             if (input1.value.length < minLength1) {
                     swal("Head must be " + minLength1 + " digit long");
                 }
-            if (input2.value.length < minLength2) {
+            else if (input2.value.length < minLength2) {
                     swal("Programme must be " + minLength2 + " digit long");
                 }
-            if (input3.value.length < minLength3) {
+            else if (input3.value.length < minLength3) {
                     swal("Project must be " + minLength3 + " digit long");
                 }
-            if (input4.value.length < minLength4) {
+            else if (input4.value.length < minLength4) {
                     swal("Sub Project must be " + minLength4 + " digit long");
                 }        
-            if (input5.value.length < minLength5) {
+            else if (input5.value.length < minLength5) {
                     swal("Vote must be " + minLength5 + " digit long");
                 }
-            if (input6.value.length < minLength6) {
+            else if (input6.value.length < minLength6) {
                     swal("Detail must be " + minLength6 + " digit long");
                 }
-            if (input7.value.length < minLength7) {
+            else if (input7.value.length < minLength7) {
                     swal("Fund must be " + minLength7 + " digit long");
                 }
 
-             if (input8.value.length < minLength8) {
+            else if (input8.value.length < minLength8) {
                     swal("Mid/Sub Office must be " + minLength8 + " digit long");
-                }    
+                }  
 
             else {
-                
+
             var value1 = document.getElementById("input1").value;
             var value2 = document.getElementById("input2").value;
             var value3 = document.getElementById("input3").value;
@@ -289,6 +289,7 @@
 
             var allsgmtexp = results1 + "/" + results2 + "/" + results3 + "/" + results4 + "/" + results5;
             document.getElementById("finalexp").textContent = allsgmtexp;
+                
             }
         }
     </script>
