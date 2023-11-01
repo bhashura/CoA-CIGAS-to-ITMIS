@@ -141,8 +141,8 @@
   &nbsp;<p style="font-size:20px">-</p>&nbsp;
   
     <div class="input-container">
-      <label>Detail</label>
-      <input type="text" id="input6" value="00" maxlength="2">
+      <label>Item</label>
+      <input type="text" id="input6" value="000" maxlength="3">
     </div>
   
   &nbsp;<p style="font-size:20px">/</p>&nbsp;
@@ -231,7 +231,7 @@
             var minLength3 = 2;
             var minLength4 = 3;
             var minLength5 = 4;
-            var minLength6 = 2;
+            var minLength6 = 3;
             var minLength7 = 2;
             var minLength8 = 4;
 
@@ -251,7 +251,7 @@
                     swal("Vote must be " + minLength5 + " digit long");
                 }
             else if (input6.value.length < minLength6) {
-                    swal("Detail must be " + minLength6 + " digit long");
+                    swal("Item must be " + minLength6 + " digit long");
                 }
             else if (input7.value.length < minLength7) {
                     swal("Fund must be " + minLength7 + " digit long");
